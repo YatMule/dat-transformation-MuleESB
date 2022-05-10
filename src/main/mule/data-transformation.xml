@@ -8,7 +8,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<file:config name="File_Config" doc:name="File Config" doc:id="8553cead-d4b7-409e-96ae-d4a9433cfdc0" />
 	<file:config name="File_Config1" doc:name="File Config" doc:id="80507b2f-dbf7-4cfe-b409-2c107e2ce9ae" />
 	<flow name="data-transformationFlow" doc:id="e73f4a4f-2871-4872-9b8c-1dc91963ecf4" >
-		<file:listener doc:name="On New or Updated File" doc:id="22eee386-6fe7-4717-8550-926cc9753c67" directory="C:\Users\YAtmule\Documents\Mule_Projects\data-transformation\input" moveToDirectory="C:\Users\YAtmule\Documents\Mule_Projects\data-transformation\backup" renameTo="#[&quot;backup-&quot; ++ now() as String{format: 'Y-M-d-h-m-s'} ++ &quot;-&quot; ++ vars.fileName]" outputMimeType="application/xml">
+		<file:listener doc:name="On New or Updated File" doc:id="22eee386-6fe7-4717-8550-926cc9753c67" directory="C:\Users\YAtmule\Documents\Mule_Projects\data-transformation\input" moveToDirectory="C:\Users\YAtmule\Documents\Mule_Projects\data-transformation\backup" renameTo="#[&quot;backup-&quot; ++ now() as String{format: 'Y-M-d-h-m-s'} ++ &quot;-&quot; ++ vars.fileName]" outputMimeType="application/xml" doc:description="This is a triger it starts the flow when there is a new file in the specified folder.">
 			<scheduling-strategy >
 				<fixed-frequency frequency="10" timeUnit="SECONDS"/>
 			</scheduling-strategy>
